@@ -2,11 +2,17 @@
 
 namespace hello_console
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var message = getMessage("World");
+            Console.WriteLine(message);
+        }
+
+        private static string getMessage(string name)
+        {
+            return "Hello " + name;
         }
     }
 }
