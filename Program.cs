@@ -7,35 +7,28 @@ namespace hello_console
         public static void Main(string[] args)
         {
             DateTime[] dates = { new DateTime(2020, 2, 2), new DateTime(2020, 2, 3) };
-            Console.WriteLine(countWorkDays(new DateTime(2020, 2, 1), new DateTime(2020, 2, 5), dates));
-
+            Console.WriteLine(countWorkDays(new DateTime(2020, 2, 7), new DateTime(2020, 2, 5), dates));
         }
 
 
 
         private static int countWorkDays(DateTime start, DateTime end, DateTime[] weekEnd)
         {
-            int count;
+            int count = 0;
             if (start > end)
             {
                 throw new Exception("Start date must be earlier end date");
             }
             else
             {
-                count = end.Day - start.Day + 1;
-                foreach (var day in weekEnd)
+                for (; start<=end; start = start.AddDays(1) )
                 {
-                    if (day >= start && day <= end)
+                    if (!Array.Exists(weekEnd, date=>date==start))
                     {
-                        if (count == 0)
-                        {
-                            throw new Exception("Weekends must be not more then work days");
-                        }
-                        count--;
+                        count++;
                     }
                 }
             }
-
             return count;
         }
 
