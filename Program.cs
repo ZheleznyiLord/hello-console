@@ -21,9 +21,9 @@ namespace hello_console
             }
             else
             {
-                for (; start<=end; start = start.AddDays(1) )
+                for (; start <= end; start = start.AddDays(1))
                 {
-                    if (!Array.Exists(weekEnd, date=>date==start))
+                    if (!Array.Exists(weekEnd, date => date.Equals(start)))
                     {
                         count++;
                     }
