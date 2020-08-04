@@ -7,7 +7,7 @@ namespace hello_console
         public static void Main(string[] args)
         {
             DateTime[] dates = { new DateTime(2020, 2, 2), new DateTime(2020, 2, 3) };
-            Console.WriteLine(countWorkDays(new DateTime(2020, 2, 7), new DateTime(2020, 2, 5), dates));
+            Console.WriteLine(countWorkDays(new DateTime(2020, 2, 1), new DateTime(2020, 2, 5), dates));
         }
 
 
